@@ -2,13 +2,13 @@ version: '3.9'
 
 services:
   api:
-    image: <YOUR-DOCKERHUB-NAME/<NAME-OF-DOCKERHUB-REPOSITORY>:<DOCKER-TAG>
+    image: tyskerdocker/datamatiker:1.0.0
     container_name: <CONTAINER-NAME CAN BE FOUND IN POM FILE>
     environment:
-        - CONNECTION_STR=jdbc:postgresql://db:<PORT-NUMBER>/
+        - CONNECTION_STR=<CONNECTION-STR>
         - DB_USERNAME=<DB-PASSWORD>
         - DB_PASSWORD=<DB-PASSWORD>
-        - DEPLOYED=TRUE
+        - DEPLOYED=<DEPLOYED>
         - SECRET_KEY=<YOUR-SECRET-KEY>
         - TOKEN_EXPIRE_TIME=1800000
         - ISSUER=<ISSUER>
