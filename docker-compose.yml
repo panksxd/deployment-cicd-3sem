@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   api:
-    image: <YOUR-DOCKERHUB-NAME/<NAME-OF-DOCKERHUB-REPOSITORY>:<TAG>
+    image: <YOUR-DOCKERHUB-NAME/<NAME-OF-DOCKERHUB-REPOSITORY>:<DOCKER-TAG>
     container_name: <CONTAINER-NAME CAN BE FOUND IN POM FILE>
     environment:
         - CONNECTION_STR=jdbc:postgresql://db:<PORT-NUMBER>/
