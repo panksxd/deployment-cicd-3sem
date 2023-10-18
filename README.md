@@ -1,5 +1,16 @@
 # JAVALIN R.E.S.T API
 
+<!-- TOC -->
+* [JAVALIN R.E.S.T API](#javalin-rest-api)
+  * [Description](#description)
+  * [Technologies used:](#technologies-used)
+    * [Prerequisites](#prerequisites)
+    * [Deployment CI pipeline](#deployment-ci-pipeline)
+  * [API Documentation](#api-documentation)
+    * [API Endpoints](#api-endpoints)
+    * [Project Data Flow](#project-data-flow)
+<!-- TOC -->
+
 ## Description
 
 This is a simple REST API that allows you to create, read, update and delete;
@@ -49,13 +60,17 @@ You can read more about the setup in the repositories above.
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/<your_api_name>:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/<NAME-OF-DOCKERHUB-REPOSITORY>:<DOCKER-TAG>
 ```
 
 2. Make sure yoy have the following secrets in your GitHub repository
 
-- DOCKERHUB_USERNAME
-- DOCKERHUB_TOKEN
+GO TO (GitHub Secret): Settings -> Secrets and variables -> actions -> New repository secret
+
+- key -> DOCKERHUB_USERNAME : value -> your dockerhub username
+- key -> DOCKERHUB_TOKEN : value -> your dockerhub token
+
+GO TO (Dockerhub token) : https://hub.docker.com/settings/security -> New Access Token
 
 3. Update the GitHub action file to match your branch name you want to build on
 
@@ -88,6 +103,8 @@ on:
         <javalin.port>port number</javalin.port>
     </properties>
 ```
+
+**!!!Remember to gitignore the github action, the pom and the docker-compose file!!!**
 
 5. Testcontainers
 
