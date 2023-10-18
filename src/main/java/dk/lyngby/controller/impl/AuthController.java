@@ -3,7 +3,7 @@ package dk.lyngby.controller.impl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import dk.lyngby.config.HibernateConfig;
-import dk.lyngby.dao.impl.UserDao;
+import dk.lyngby.dao.impl.AuthDao;
 import dk.lyngby.exception.ApiException;
 import dk.lyngby.exception.AuthorizationException;
 import dk.lyngby.model.User;
@@ -13,14 +13,14 @@ import jakarta.persistence.EntityManagerFactory;
 
 import java.util.Set;
 
-public class UserController {
+public class AuthController {
 
-    private final UserDao userDao;
+    private final AuthDao authDao;
     private final TokenFactory tokenFactory = TokenFactory.getInstance();
 
-    public UserController() {
+    public AuthController() {
         EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
-        userDao = UserDao.getInstance(emf);
+        authDao = AuthDao.getInstance(emf);
     }
 
     public void login(Context ctx) throws ApiException, AuthorizationException {
@@ -57,7 +57,7 @@ public class UserController {
     }
 
     private User getVerfiedOrRegisterUser(String username, String password, String role, boolean isCreate) throws AuthorizationException {
-        return isCreate ? userDao.registerUser(username, password, role) : userDao.getVerifiedUser(username, password);
+        return isCreate ? authDao.registerUser(username, password, role) : authDao.getVerifiedUser(username, password);
     }
 
     private String getToken(String username, Set<String> userRoles) throws ApiException {

@@ -33,15 +33,5 @@ public class UserDTO {
             userDTOList.add(new UserDTO(user.getUsername(), user.getRolesAsStrings().toArray(new String[0])));
         }
         return userDTOList;
-
     }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public Set<String> getRoles() {
-        return roles;
-    }
-
 }

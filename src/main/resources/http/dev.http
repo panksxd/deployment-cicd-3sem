@@ -5,7 +5,7 @@ Authorization: Bearer {{token}}
 
 ###
 
-GET {{url}}/hotels/600
+GET {{url}}/hotels/1
 Authorization: Bearer {{token}}
 
 ###
@@ -22,7 +22,7 @@ Authorization: Bearer {{token}}
 
 ###
 
-PUT {{url}}/hotels/200
+PUT {{url}}/hotels/2
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
@@ -41,7 +41,7 @@ Authorization: Bearer {{token}}
 
 // Room API
 
-GET {{url}}/rooms/60
+GET {{url}}/rooms/1
 Authorization: Bearer {{token}}
 
 ###

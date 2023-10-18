@@ -20,7 +20,7 @@ public class Routes {
 
     private final HotelRoute hotelRoute = new HotelRoute();
     private final RoomRoute roomRoute = new RoomRoute();
-    private final UserRoutes userRoutes = new UserRoutes();
+    private final AuthRoutes authRoutes = new AuthRoutes();
 
     private final Logger LOGGER = LoggerFactory.getLogger(Routes.class);
 
@@ -34,7 +34,7 @@ public class Routes {
             app.before(this::requestInfoHandler);
 
             app.routes(() -> {
-                path("/", userRoutes.getRoutes());
+                path("/", authRoutes.getRoutes());
                 path("/", hotelRoute.getRoutes());
                 path("/", roomRoute.getRoutes());
             });
