@@ -23,7 +23,6 @@ class RoomControllerTest {
 
     private static Javalin app;
     private static EntityManagerFactory emfTest;
-    private static HibernateConfig hibernateConfig;
     private static Object adminToken;
     private static final String BASE_URL = "http://localhost:7777/api/v1";
 
