@@ -48,14 +48,6 @@ public class HibernateConfig {
             props.put("hibernate.current_session_context_class", "thread"); // hibernate current session context
             props.put("hibernate.hbm2ddl.auto", "update"); // hibernate creates tables based on entities
 
-            // Hibernate Default Pool Configuration
-            // https://www.mastertheboss.com/hibernate-jpa/hibernate-configuration/configure-a-connection-pool-with-hibernate/
-            props.put("hibernate.connection.provider_class", "org.hibernate.hikaricp.internal.HikariCPConnectionProvider");// Maximum waiting time for a connection from the pool
-            props.put("hibernate.hikari.connectionTimeout", "10000"); // Minimum number of ideal connections in the pool
-            props.put("hibernate.hikari.minimumIdle", "5"); // Maximum number of actual connection in the pool
-            props.put("hibernate.hikari.maximumPoolSize", "20"); // Maximum time that a connection is allowed to sit ideal in the pool
-            props.put("hibernate.hikari.idleTimeout", "200000"); // Maximum size of statements that has been prepared
-
             return getEntityManagerFactory(configuration, props);
         } catch (Throwable ex) {
             System.err.println("Initial SessionFactory creation failed." + ex);
