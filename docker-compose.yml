@@ -5,13 +5,13 @@ services:
     image: tyskerdocker/datamatiker:1.0.0
     container_name: <CONTAINER-NAME CAN BE FOUND IN POM FILE>
     environment:
-        - CONNECTION_STR=<CONNECTION_STR>
-        - DB_USERNAME=<DB_PASSWORD>
-        - DB_PASSWORD=<DB_PASSWORD>
-        - DEPLOYED=<DEPLOYED>
-        - SECRET_KEY=<SECRET_KEY>
+        - CONNECTION_STR:${CONNECTION_STR>}
+        - DB_USERNAME=${DB_PASSWORD}
+        - DB_PASSWORD=${DB_PASSWORD}
+        - DEPLOYED=${DEPLOYED}
+        - SECRET_KEY=${SECRET_KEY}
         - TOKEN_EXPIRE_TIME=1800000
-        - ISSUER=<ISSUER>
+        - ISSUER=${ISSUER}
     ports:
       - "7070:7070"
     networks:
