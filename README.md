@@ -48,9 +48,9 @@ services:
       - CONNECTION_STR=jdbc:postgresql://db:<PORT-NUMBER>/
       - DB_USERNAME=<DB-PASSWORD>
       - DB_PASSWORD=<DB-PASSWORD>
-      - DEPLOYED=TRUE
+      - DEPLOYED=<DEPLOYMENT>
       - SECRET_KEY=<YOUR-SECRET-KEY>
-      - TOKEN_EXPIRE_TIME=1800000
+      - TOKEN_EXPIRE_TIME=<TOKEN_EXPIRE_TIME>
       - ISSUER=<ISSUER>
     ports:
       - "7070:7070"
@@ -71,14 +71,14 @@ networks:
     CONNECTION_STR=jdbc:postgresql://db:<PORT-NUMBER>/
     DB_USERNAME=<DB-PASSWORD>
     DB_PASSWORD=<DB-PASSWORD>
-    DEPLOYED=TRUE
+    DEPLOYED=<DEPLOYED>
     SECRET_KEY=<YOUR-SECRET-KEY>
-    TOKEN_EXPIRE_TIME=1800000
+    TOKEN_EXPIRE_TIME=TOKEN_EXPIRE_TIME
     ISSUER=<ISSUER>
 ```
 
 11. Add `.env` to your `.gitignore` file
-12. We only need those two properties in the pom file, the rest will be added in the docker-compose file
+12. We only need those two env properties in the pom file, the rest will be added through the docker-compose file
 
 ```xml
     <properties>
