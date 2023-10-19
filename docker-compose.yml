@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   api:
-    image: tyskerdocker/datamatiker:1.0.1
+    image: <YOUR-DOCKERHUB-NAME/<NAME-OF-DOCKERHUB-REPOSITORY>:<DOCKER-TAG>
     container_name: app
     environment:
         CONNECTION_STR: ${CONNECTION_STR}
