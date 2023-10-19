@@ -11,5 +11,6 @@ public class Main {
                 .startServer(
                         Javalin.create(),
                         Integer.parseInt(ApplicationConfig.getProperty("javalin.port")));
+
     }
 }
