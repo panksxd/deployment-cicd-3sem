@@ -10,7 +10,7 @@ services:
         DB_PASSWORD: ${DB_PASSWORD}
         DEPLOYED: ${DEPLOYED}
         SECRET_KEY: ${SECRET_KEY}
-        TOKEN_EXPIRE_TIME: 1800000
+        TOKEN_EXPIRE_TIME: ${TOKEN_EXPIRE_TIME}
         ISSUER: ${ISSUER}
     ports:
       - "7070:7070"
