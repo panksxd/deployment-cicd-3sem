@@ -24,6 +24,13 @@ public class HibernateConfig {
             Configuration configuration = new Configuration();
 
             Properties props = new Properties();
+            String DB_USERNAMEs = System.getenv("DB_USERNAME");
+            String DB_PASSWORDs = System.getenv("DB_PASSWORD");
+            String CONNECTION_STRs = System.getenv("CONNECTION_STR") + ApplicationConfig.getProperty("db.name");
+            System.out.println("======================================");
+            System.out.println("DB_USERNAME: " + DB_USERNAMEs);
+            System.out.println("DB_PASSWORD: " + DB_PASSWORDs);
+            System.out.println("CONNECTION_STR: " + CONNECTION_STRs);
 
             boolean isDeployed = (System.getenv("DEPLOYED") != null);
 
@@ -35,11 +42,6 @@ public class HibernateConfig {
                 String DB_USERNAME = System.getenv("DB_USERNAME");
                 String DB_PASSWORD = System.getenv("DB_PASSWORD");
                 String CONNECTION_STR = System.getenv("CONNECTION_STR") + ApplicationConfig.getProperty("db.name");
-                System.out.println("======================================");
-                System.out.println("DB_USERNAME: " + DB_USERNAME);
-                System.out.println("DB_PASSWORD: " + DB_PASSWORD);
-                System.out.println("CONNECTION_STR: " + CONNECTION_STR);
-                System.out.println("======================================");
                 props.setProperty("hibernate.connection.url", CONNECTION_STR);
                 props.setProperty("hibernate.connection.username", DB_USERNAME);
                 props.setProperty("hibernate.connection.password", DB_PASSWORD);
