@@ -25,18 +25,6 @@ public class HibernateConfig {
 
             Properties props = new Properties();
 
-
-            String DB_USERNAMEs = System.getenv("DB_USERNAME");
-            String DB_PASSWORDs = System.getenv("DB_PASSWORD");
-            String CONNECTION_STRs = System.getenv("CONNECTION_STR") + ApplicationConfig.getProperty("db.name");
-
-            System.out.println("============================================");
-            System.out.println("isDeployed: " + System.getenv("DEPLOYED"));
-            System.out.println("DB_USERNAMEs: " + DB_USERNAMEs);
-            System.out.println("DB_PASSWORDs: " + DB_PASSWORDs);
-            System.out.println("CONNECTION_STRs: " + CONNECTION_STRs);
-            System.out.println("============================================");
-
             boolean isDeployed = (System.getenv("DEPLOYED") != null);
 
             if(isDeployed) {
