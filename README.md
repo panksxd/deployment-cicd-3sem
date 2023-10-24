@@ -1,6 +1,6 @@
-# Deployment CI/CD pipeline
+## Deployment CI/CD pipeline
 
-# Part 1 - GitHub workflow pipeline
+### Part 1 - GitHub workflow pipeline
 
 1. Create a new repository on GitHub and push the project to the repository
 2. Create a folder called .github/workflows
