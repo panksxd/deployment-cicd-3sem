@@ -6,7 +6,7 @@
 
 1. Clone the ```docker-compose``` branch on your droplet
 
-** Cloning a repository with a specific branch**
+**How to clone a specific repository branch**
 
 ```bash
     git clone -b <branch_name> <remote_repo>
