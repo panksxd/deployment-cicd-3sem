@@ -19,75 +19,7 @@ EXPOSE 7070
 ENTRYPOINT ["java", "-jar", "/app.jar"]
 ```
 
-5. Create a new file called .dockerignore in the root of the project
-6. Copy the following code into the .dockerignore file
-
-```bash
-    .git
-    .github
-    target
-    ./README.md
-    .idea
-    .gitignore
-    ./images
-    ./src/test
-    ./src/main/resources/
-```
-
-7. Create a new file called docker-compose.yml in the root of the project
-8. Copy the following code into the docker-compose.yml file
-
-```yaml
-version: '3.9'
-
-services:
-  api:
-    image: <YOUR-DOCKERHUB-NAME/<NAME-OF-DOCKERHUB-REPOSITORY>:<DOCKER-TAG>
-    container_name: <CONTAINER-NAME CAN BE FOUND IN POM FILE>
-    environment:
-      - CONNECTION_STR=jdbc:postgresql://db:<PORT-NUMBER>/
-      - DB_USERNAME=<DB-PASSWORD>
-      - DB_PASSWORD=<DB-PASSWORD>
-      - DEPLOYED=<DEPLOYMENT>
-      - SECRET_KEY=<YOUR-SECRET-KEY>
-      - TOKEN_EXPIRE_TIME=<TOKEN_EXPIRE_TIME>
-      - ISSUER=<ISSUER>
-    ports:
-      - "7070:7070"
-    networks:
-      - database_network
-
-networks:
-  database_network:
-    name: database_network
-    internal: false
-    driver: bridge
-```
-
-9. Create a new file called .env in the root of the project
-10. Copy the following code into the .env file
-
-```bash
-    CONNECTION_STR=jdbc:postgresql://db:<PORT-NUMBER>/
-    DB_USERNAME=<DB-PASSWORD>
-    DB_PASSWORD=<DB-PASSWORD>
-    DEPLOYED=<DEPLOYED>
-    SECRET_KEY=<YOUR-SECRET-KEY>
-    TOKEN_EXPIRE_TIME=TOKEN_EXPIRE_TIME
-    ISSUER=<ISSUER>
-```
-
-11. Add `.env` to your `.gitignore` file
-12. We only need those two env properties in the pom file, the rest will be added through the docker-compose file
-
-```xml
-    <properties>
-        <db.name>database name</db.name>
-        <javalin.port>port number</javalin.port>
-    </properties>
-```
-
-13. Add the following to the workflow.yml file
+5.  Add the following to the workflow.yml file
 
 ```yaml
       -
@@ -110,7 +42,7 @@ networks:
 ```
 
 
-14. Add secrets to your GitHub repository
+6. Add secrets to your GitHub repository
 
 GO TO (GitHub Secret): Settings -> Secrets and variables -> actions -> New repository secret
 
