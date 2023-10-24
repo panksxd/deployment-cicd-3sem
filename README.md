@@ -1,8 +1,6 @@
-# Deployment CI/CD pipeline
+## Deployment CI/CD pipeline
 
-## Part 3 - Deployment with docker compose
-
-### Befor you start remember to:
+### Part 3 - Deployment with docker compose
 
 1. Clone the ```docker-compose``` branch on your droplet
 
