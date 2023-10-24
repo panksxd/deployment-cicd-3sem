@@ -8,10 +8,7 @@ GO TO: github branch `github`
 
 GO TO: github branch `docker`
 
-```
-// change to another branch
-git checkout <name of branch>
-```
+## Part 3 - Droplet Deployment
 
-
+GO TO: github branch `docker-compose`
 
