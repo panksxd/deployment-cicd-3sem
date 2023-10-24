@@ -1,14 +1,20 @@
-# Deployment CI/CD pipeline
+## Deployment CI/CD pipeline
 
-## Part 1 - GitHub workflow pipeline
+### Part 1 - GitHub workflow pipeline
 
-GO TO: github branch `github`
+```
+    GO TO: git checkout github
+```
 
-## Part 2 - Docker Deployment pipeline
+### Part 2 - Docker Deployment pipeline
 
-GO TO: github branch `docker`
+```
+    GO TO: git checkout docker
+```
 
-## Part 3 - Droplet Deployment
+### Part 3 - Droplet Deployment
 
-GO TO: github branch `docker-compose`
+```
+    GO TO: git checkout docker-compose
+```
 
