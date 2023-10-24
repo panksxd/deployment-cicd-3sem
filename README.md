@@ -32,10 +32,6 @@ jobs:
         run: mvn --batch-mode --update-snapshots package
         
 ``` 
-5. Remember to create an .gitignore file and add the following lines to it 
+5. Remember to create an .gitignore file. https://www.toptal.com/developers/gitignore
 
-```bash
-    .github/workflows
-    target
-```
 6. Push the changes to GitHub and go to the actions tab to see the workflow in action
