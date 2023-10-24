@@ -1,8 +1,6 @@
-# Deployment CI/CD pipeline
+## Deployment CI/CD pipeline
 
-## Part 2 - Docker
-
-### Deployment CI pipeline
+### Part 2 - Docker
 
 1. Sign up for a Dockerhub account
 2. Create a new repository on Dockerhub
